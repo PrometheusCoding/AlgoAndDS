@@ -7,7 +7,7 @@ We search the list for the smallest element and then swap it with the first inde
 We repeat for the second and swap it with the second index of the list
 We do this up until the list is sorted
 
-Since it loops through n items, n times we have an algorithm with big O of O(n)
+Since it loops through n items, n times we have an algorithm with big O of O(n^2)
 */
 
 void selectionSort(int* array, int size){
