@@ -2,6 +2,17 @@
 #include <stdlib.h>
 #include <math.h>
 
+/*
+How does binary search work?
+
+A prerequisite to use a binary search is to know that the list is sorted in some testable/comparable way.
+So we first check the middle index to see if it is the target value. If not, then we compare that middle value to the target and check if we should 'discard' the
+indexes before or after the middle. Then we keep repeating this process until the value is found. If the size of the array to search becomes 1, and that value is
+not the target value, then the search finds that the value is not in the list.
+
+Since we are effectively halving the search space every time, the time complexity of the binary search is O(logn)
+*/
+
 int binarySearch(int* array, int size, int target){
 
     int left = 0;
