@@ -1,7 +1,6 @@
 #ifndef MYSTACK_H
 #define MYSTACK_H
 
-#include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
