@@ -1,3 +1,6 @@
+#ifndef MYSTACK_H
+#define MYSTACK_H
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -17,3 +20,5 @@ bool isFull(myStack * stack);
 int push(myStack *stack, int value);
 int pop(myStack *stack);
 int peek(myStack * stack); 
+
+#endif
