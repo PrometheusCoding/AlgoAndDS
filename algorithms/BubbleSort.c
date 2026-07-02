@@ -4,7 +4,7 @@
 /*
 How does bubble sort work?
 Go through the list and for every two consecutive index, if the first one is greater than the second one (if you are sorting in ascending fashion) then swap.
-Do so until there is no swap needed any more.
+Repeated go through the list until no more swaps are needed.
 
 Since we do this at most n+1 times, going through n items, the big O is O(n^2)
 */
