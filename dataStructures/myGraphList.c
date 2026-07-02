@@ -42,6 +42,38 @@ void addEdge(graphList* graph, int tail, int head){
     }
 }
 
+static int removeEdgeDirected(graphList* graph, int tail, int head){
+    node* nodeToSearch = graph->adjacencyLists[tail];
+    node* prevNode = NULL;
+    
+    while(nodeToSearch){
+        if (nodeToSearch->vertex == head){
+            
+            if (prevNode == NULL){
+                graph->adjacencyLists[tail] = nodeToSearch->next;
+            } else {
+                prevNode->next = nodeToSearch->next;
+            }
+            free(nodeToSearch);
+            return 1;
+
+        } else {
+            prevNode = nodeToSearch;
+            nodeToSearch = nodeToSearch->next;
+        }
+    }
+    return -1;
+}
+
+int removeEdge(graphList* graph, int tail, int head){
+    int result = removeEdgeDirected(graph, tail, head);
+    
+    if (result == 1 && !graph->isDirected){
+        removeEdgeDirected(graph, head, tail);
+    }
+
+    return result;
+}
 
 void printGraph(graphList* graph){
     printf("Vertex:     Adjacency List\n");
@@ -65,6 +97,10 @@ int main(){
     addEdge(undirectedGraph, 0, 2);
     addEdge(undirectedGraph, 1, 3);
     addEdge(undirectedGraph, 3, 4);
+    if (removeEdge(undirectedGraph, 0, 2)){
+        printf("Edge was successfully removed!\n");
+    }
+
 
     printf("Adjacecncy List for Undirected Graph:\n");
     printGraph(undirectedGraph);

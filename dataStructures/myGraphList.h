@@ -18,6 +18,7 @@ typedef struct
 struct node* createNode(int);
 graphList* createGraph(int, int);
 void addEdge(graphList*, int, int);
+int removeEdge(graphList*, int, int);
 void printGraph(graphList*);
 
 #endif
