@@ -7,6 +7,8 @@ typedef struct graphMatrix{
     int isDirected;
 } graphMatrix;
 
-
+graphMatrix* createAdjacencyMatrix(int, int);
+void editEdge(graphMatrix*, int, int, int);
+void printAdjacencyMatrix(graphMatrix*);
 
 #endif
