@@ -90,7 +90,7 @@ void printGraph(graphList* graph){
     }
 }
 
-
+#ifdef GRAPHLIST_TEST
 int main(){
     graphList* undirectedGraph = createGraph(5, 0);
     addEdge(undirectedGraph, 0, 1);
@@ -116,3 +116,4 @@ int main(){
 
     return 0;
 }
+#endif

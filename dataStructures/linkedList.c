@@ -96,7 +96,7 @@ linkedList* list_search(linkedList* head, int value){
     return NULL;
 }
 
-
+#ifdef MYLINKEDLIST_TEST
 int main(){
     printf("Hello\n");
     linkedList *newLinkedList = NULL;
@@ -106,3 +106,4 @@ int main(){
     newLinkedList = list_remove(newLinkedList, 32);
     return 0;
 }
+#endif

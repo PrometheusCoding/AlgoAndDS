@@ -34,6 +34,7 @@ void printAdjacencyMatrix(graphMatrix* graph){
     printf("\n");
 }
 
+#ifdef MYGRAPHMATRIX_TEST
 int main(){
     graphMatrix* undirectedGraph = createAdjacencyMatrix(5, 0);
     editEdge(undirectedGraph, 0, 2, 1);
@@ -57,3 +58,4 @@ int main(){
 
     return 0;
 }
+#endif

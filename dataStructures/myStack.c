@@ -58,6 +58,8 @@ int peek(myStack * stack){
     return stack->arr[stack->top];
 }
 
+
+#ifdef MYSTACK_TEST
 int main(){
     myStack stack;
     init(&stack);
@@ -72,3 +74,4 @@ int main(){
     pop(&stack);
     return 0;
 }
+#endif

@@ -69,7 +69,7 @@ void peek(myQueue *queue){
     return;
 } 
 
-
+#ifdef MYQUEUE_TEST
 int main(){
     myQueue queue;
     init(&queue);
@@ -86,3 +86,4 @@ int main(){
     peek(&queue);
     return 0;
 }
+#endif
