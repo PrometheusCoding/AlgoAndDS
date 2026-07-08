@@ -22,11 +22,11 @@ bool isFull(myQueue *queue){
     return false;
 }
 
-void enqueue(myQueue *queue, int value){
+int enqueue(myQueue *queue, int value){
     // Time Complexity: O(1)
     if (isFull(queue)){
         printf("%d could not be queued. The queue is full!\n", value);
-        return;
+        return -1;
     }
     
     if (queue->rear + 1 > MAX_SIZE - 1){
@@ -36,18 +36,17 @@ void enqueue(myQueue *queue, int value){
     }
     queue->arr[queue->rear] = value;
     queue->count++;
-    printf("%d has been queued!\n", value);
+
+    return 0;
 }
 
 int dequeue(myQueue *queue){
     // Time Complexity: O(1)
     if (isEmpty(queue)){
-        printf("Nothing to be dequeued!\n");
         return -1;
     }
 
     int dequeued = queue->arr[queue->front];  
-    printf("%d has been dequeued!\n", dequeued);
     if (queue->front + 1 > MAX_SIZE - 1){
         queue->front = 0;
     } else{

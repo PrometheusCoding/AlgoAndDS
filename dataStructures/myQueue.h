@@ -19,7 +19,7 @@ void init(myQueue *queue);
 bool isEmpty(myQueue *queue);
 bool isFull(myQueue * queue);
 
-void enqueue(myQueue *queue, int value);
+int enqueue(myQueue *queue, int value);
 int dequeue(myQueue *queue);
 void peek(myQueue * queue); 
 
