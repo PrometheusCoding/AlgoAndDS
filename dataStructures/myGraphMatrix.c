@@ -30,6 +30,8 @@ static int editEdgeDirected(graphMatrix* graph, int tail, int head, int add, int
     } else {
         graph->matrix[(tail * graph->numOfVertices) + head].edgeWeight = -10000;
     }
+
+    return 1;
 } 
 
 int editEdge(graphMatrix* graph, int tail, int head, int add, int weight){
