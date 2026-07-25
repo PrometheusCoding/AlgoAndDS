@@ -1,14 +1,22 @@
 #ifndef MYGRAPHMATRIX_H
 #define MYGRAPHMATRIX
 
+typedef struct graphElement{
+
+    int edgeExists;
+    int edgeWeight;
+
+} graphElement;
+
 typedef struct graphMatrix{
-    int* matrix;
+    graphElement* matrix;
     int numOfVertices;
     int isDirected;
+    int isWeighted;
 } graphMatrix;
 
-graphMatrix* createAdjacencyMatrix(int, int);
-void editEdge(graphMatrix*, int, int, int);
+graphMatrix* createAdjacencyMatrix(int, int, int);
+int editEdge(graphMatrix*, int, int, int, int);
 void printAdjacencyMatrix(graphMatrix*);
 
 #endif
