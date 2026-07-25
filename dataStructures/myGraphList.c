@@ -66,13 +66,13 @@ static int removeEdgeDirected(graphList* graph, int tail, int head){
 }
 
 int removeEdge(graphList* graph, int tail, int head){
-    int result = removeEdgeDirected(graph, tail, head);
+    int isSuccessful = removeEdgeDirected(graph, tail, head);
     
-    if (result == 1 && !graph->isDirected){
-        removeEdgeDirected(graph, head, tail);
+    if (isSuccessful == 1 && !graph->isDirected){
+        isSuccessful = removeEdgeDirected(graph, head, tail);
     }
 
-    return result;
+    return isSuccessful;
 }
 
 void printGraph(graphList* graph){
