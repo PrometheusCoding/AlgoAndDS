@@ -15,9 +15,10 @@ typedef struct {
 typedef struct {
     queueElement arr[MAX_SIZE];
     int count;
+    int highPriorityDequeuedFirst;
 } myPriorityQueue;
 
-void init(myPriorityQueue *pqueue);
+void init(myPriorityQueue *pqueue, int highPriorityDequeuedFirst);
 
 bool isEmpty(myPriorityQueue *pqueue);
 bool isFull(myPriorityQueue *pqueue);
