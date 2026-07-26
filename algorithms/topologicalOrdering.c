@@ -77,8 +77,7 @@ int main(){
     printGraph(DAG);
 
     topologicalSort(DAG);
-
-
+    freeGraph(DAG);
 
     return 0;
 }

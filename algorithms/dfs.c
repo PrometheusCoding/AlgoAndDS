@@ -46,5 +46,6 @@ int main(){
     printf("\n");
 
     free(visitedArray);
+    freeGraph(directedGraph);
     return 0;
 }

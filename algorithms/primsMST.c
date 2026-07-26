@@ -116,5 +116,7 @@ int main(){
 
     prims(graph);
 
+    freeGraph(graph);
+
     return 0;
 }

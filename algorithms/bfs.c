@@ -56,5 +56,7 @@ int main(){
 
     bfs(directedGraph, 1);
 
+    freeGraph(directedGraph);
+
     return 0;
 }
