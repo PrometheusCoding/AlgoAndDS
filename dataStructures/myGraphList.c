@@ -90,6 +90,38 @@ void printGraph(graphList* graph){
     }
 }
 
+void freeGraph(graphList* graph){
+    // First go through each linkedList, free all the nodes from the
+    // linked lists, then free the linkedList, then free the graph.
+
+    node* nextNode;
+
+    for (int iter = 0; iter < graph->numOfVertices; iter++){
+        
+        node* currentNode = graph->adjacencyLists[iter];
+        while(currentNode != NULL){
+
+            if (currentNode->next != NULL){
+
+                nextNode = currentNode->next;
+                free(currentNode);
+                currentNode = nextNode;
+
+            } else {
+                free(currentNode);
+                currentNode = NULL;
+            }
+
+        }
+
+    }
+
+    free(graph->adjacencyLists);
+    free(graph);
+
+
+}
+
 #ifdef GRAPHLIST_TEST
 int main(){
     graphList* undirectedGraph = createGraph(5, 0);
@@ -113,6 +145,9 @@ int main(){
 
     printf("\nAdjacecncy List for Directed Graph:\n");
     printGraph(directedGraph);
+
+    freeGraph(undirectedGraph);
+    freeGraph(directedGraph);
 
     return 0;
 }
