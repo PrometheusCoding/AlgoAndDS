@@ -18,5 +18,6 @@ typedef struct graphMatrix{
 graphMatrix* createAdjacencyMatrix(int, int, int);
 int editEdge(graphMatrix*, int, int, int, int);
 void printAdjacencyMatrix(graphMatrix*);
+void freeGraph(graphMatrix*);
 
 #endif

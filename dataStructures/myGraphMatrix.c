@@ -59,6 +59,11 @@ void printAdjacencyMatrix(graphMatrix* graph){
     printf("\n");
 }
 
+void freeGraph(graphMatrix* graph){
+    free(graph->matrix);
+    free(graph);
+}
+
 #ifdef MYGRAPHMATRIX_TEST
 int main(){
     graphMatrix* undirectedGraph = createAdjacencyMatrix(5, 0, 0);
@@ -80,6 +85,10 @@ int main(){
 
     editEdge(directedGraph, 1, 0, 0, 0);
     printAdjacencyMatrix(directedGraph);
+
+    free(directedGraph);
+    free(undirectedGraph);
+
 
     return 0;
 }
