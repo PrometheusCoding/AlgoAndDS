@@ -96,14 +96,36 @@ linkedList* list_search(linkedList* head, int value){
     return NULL;
 }
 
+void freeLinkedList(linkedList* head){
+    // Go through the linked list and free each node of the linked list
+    linkedList* currentNode = head;
+    linkedList* nextNode;
+    
+    while(currentNode){
+        if (currentNode->next != NULL){
+            nextNode = currentNode->next;
+            free(currentNode);
+            currentNode = nextNode;
+        } else {
+            free(currentNode);
+            currentNode = NULL; // Or do return;
+        }
+
+    }
+
+}
+
 #ifdef MYLINKEDLIST_TEST
 int main(){
     printf("Hello\n");
     linkedList *newLinkedList = NULL;
     newLinkedList = list_insert(newLinkedList, 32);
+    newLinkedList = list_insert(newLinkedList, 42);
+    newLinkedList = list_insert(newLinkedList, 62);
     newLinkedList = list_search(newLinkedList, 32);
     newLinkedList = list_remove(newLinkedList, 40);
     newLinkedList = list_remove(newLinkedList, 32);
+    freeLinkedList(newLinkedList);
     return 0;
 }
 #endif

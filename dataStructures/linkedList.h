@@ -12,5 +12,6 @@ typedef struct linkedList{
 linkedList* list_insert(linkedList* head, int value);
 linkedList* list_remove(linkedList* head, int value);
 linkedList* list_search(linkedList* head, int value);
+void freeLinkedList(linkedList* head);
 
 #endif
